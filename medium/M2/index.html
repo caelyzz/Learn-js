@@ -15,9 +15,18 @@
   <p id="hasilCek"></p>
 
   <script>
-    // Tuliskan JavaScript kamu di sini 
-    // Tips: Gunakan inputNama.value untuk membaca isi input
+    const input = document.getElementById("inputNama")
+    const tombol = document.getElementById("tombolCek")
+    const hasil = document.getElementById("hasilCek")
 
+    tombol.addEventListener("click", function(){
+      if (input.value === ""){
+        hasil.innerText = "Isi nama terlebih dahulu"
+      }else {
+        const nama = input.value
+        hasil.innerText = "Halo," + nama
+      }
+    })
   </script>
 </body>
 
