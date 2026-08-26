@@ -12,8 +12,14 @@
   <p id="infoTanggal"></p>
 
   <script>
-    // Tuliskan JavaScript kamu di sini 
+    const tombol = document.getElementById("tombolTanggal")
+    const tanggal = document.getElementById("infoTanggal")
+    const date = new Date
+    const day = date.toLocaleDateString("id-ID", {weekday:"long"})
 
+    tombol.addEventListener("click", function(){
+      tanggal.innerText = `Hari ini: ${day}`
+    })
   </script>
 </body>
 </html>
