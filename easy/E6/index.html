@@ -12,10 +12,12 @@
   <button id="tombolGanti">Ganti Teks</button>
 
   <script>
-    // Tuliskan JavaScript kamu di sini 
+    const paragraf = document.getElementById("paragrafUtama")
+    const tombol = document.getElementById("tombolGanti")
 
-  
-    
+    tombol.addEventListener("click", function(){
+    paragraf.innerText = "Teks sudah diganti oleh JavaScript!"
+    })
   </script>
 </body>
 </html>
