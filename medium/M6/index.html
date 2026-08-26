@@ -16,11 +16,19 @@
   <p id="hasilTebak"></p>
 
   <script>
-    // Tuliskan JavaScript kamu di sini 
-    // Angka rahasia: 7
-
     const angkaRahasia = 7;
+    const input = document.getElementById("inputTebak")
+    const tombol = document.getElementById("tombolTebak")
+    const hasil = document.getElementById("hasilTebak")
 
+    tombol.addEventListener("click", function(){
+      const inputAngka = Number(input.value)
+      if (inputAngka === angkaRahasia ){
+        hasil.innerText = "Benar! Kamu menebak dengan tepat!"
+      }else{
+        hasil.innerText = "Salah! Coba lagi."
+      }
+    })
   </script>
 </body>
 
