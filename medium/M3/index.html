@@ -12,11 +12,17 @@
   <button id="tombolKurangi">Kurangi</button>
 
   <script>
-    // Tuliskan JavaScript kamu di sini 
-    // Tips: Simpan angka awal di variabel, lalu kurangi setiap klik
-
     let angka = 10;
-    
+    const tombol = document.getElementById("tombolKurangi")
+    const text = document.getElementById("angkaHitung")
+
+    tombol.addEventListener("click", function(){
+      if (angka > 1){
+        angka --; text.innerText = angka
+      }else{
+        tombol.disabled = true; text.innerText = "Liftoff"; 
+      }
+    })
   </script>
 </body>
 </html>
