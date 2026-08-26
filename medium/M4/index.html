@@ -15,10 +15,21 @@
   <p id="statusTema">Status tema akan muncul di sini</p>
 
   <script>
-    // Tuliskan JavaScript kamu di sini 
-    // Tips: document.body.style.backgroundColor untuk ubah background halaman
+    const tbGelap = document.getElementById("tombolGelap")
+    const tbTerang = document.getElementById("tombolTerang")
+    const statusTeks = document.getElementById("statusTema")
 
+    tbGelap.addEventListener("click", function(){
+      statusTeks.innerText = "Mode gelap aktif"
+      statusTeks.style.color = "white"
+      document.body.style.background = "black"
+    })
 
+    tbTerang.addEventListener("click", function(){
+      statusTeks.innerText = "Mode terang aktif"
+      statusTeks.style.color = "black"
+      document.body.style.background = "white"
+    })
   </script>
 </body>
 
