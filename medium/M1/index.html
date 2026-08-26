@@ -12,10 +12,18 @@
   <button id="tombolToggle">Sembunyikan</button>
 
   <script>
-    // Tuliskan JavaScript kamu di sini 
-    // Tips: Gunakan if-else untuk memeriksa kondisi teks saat ini
-    
-    
+    const tombol = document.getElementById("tombolToggle")
+    let teks = document.getElementById("teksToggle")
+
+    tombol.addEventListener("click", function(){
+      if (teks.innerText === ""){
+        teks.innerText = "Ini teks yang bisa disembunyikan."
+        tombol.innerText = "Sembunyikan"
+      }else{
+        teks.innerText = " "
+        tombol.innerText = "Tampilkan"
+      }
+    })
   </script>
 </body>
 </html>
