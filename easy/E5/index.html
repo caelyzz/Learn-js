@@ -14,8 +14,12 @@
   <button id="tombolMerah">Warnai Merah</button>
 
   <script>
-    // Tuliskan JavaScript kamu di sini 
+    const teks = document.getElementById("teksWarna")
+    const tombol = document.getElementById("tombolMerah")
 
+    tombol.addEventListener("click", function(){
+      teks.style.color = "red"
+    })
   </script>
 </body>
 
