@@ -12,8 +12,12 @@
   <p id="infoTanggal"></p>
 
   <script>
-    // Tuliskan JavaScript kamu di sini 
+    const tombol = document.getElementById("tombolTanggal")
+    const tanggal = document.getElementById("infoTanggal")
 
+    tombol.addEventListener("click", function(){
+      tanggal.innerText = "Hari ini: Senin"
+    })
   </script>
 </body>
 </html>
