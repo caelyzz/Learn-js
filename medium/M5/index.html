@@ -3,22 +3,31 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Soal 04 - Ubah Tema Halaman</title>
+  <title>Soal 05 - Kalkulator Tambah Sederhana</title>
 </head>
 
 <body>
 
-  <h2>Soal 04: Ubah Tema Halaman</h2>
+  <h2>Soal 05: Kalkulator Tambah Sederhana</h2>
 
-  <button id="tombolGelap">Mode Gelap</button>
-  <button id="tombolTerang">Mode Terang</button>
-  <p id="statusTema">Status tema akan muncul di sini</p>
+  <input id="angkaPertama" type="number" placeholder="Angka pertama">
+  <input id="angkaKedua" type="number" placeholder="Angka kedua">
+
+  <button id="tombolHitung">Hitung</button>
+
+  <p id="hasilHitung">Hasil akan muncul di sini</p>
 
   <script>
-    // Tuliskan JavaScript kamu di sini 
-    // Tips: document.body.style.backgroundColor untuk ubah background halaman
+    const angka1 = document.getElementById("angkaPertama")
+    const angka2 = document.getElementById("angkaKedua")
+    const tombol = document.getElementById("tombolHitung")
+    const hasil = document.getElementById("hasilHitung")
 
-
+    tombol.addEventListener("click", function(){
+      const hitung = 0;
+      const hasilHitung = Number(angka1.value) + Number (angka2.value);
+      hasil.innerText = `Hasil dari ${angka1.value} + ${angka2.value} adalah ${hasilHitung}`
+    })
   </script>
 </body>
 
