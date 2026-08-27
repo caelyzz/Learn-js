@@ -17,7 +17,15 @@
         // Tuliskan JavaScript kamu di sini 
         // Tips: Math.floor(Math.random() * 16777215).toString(16) menghasilkan warna hex acak
 
+        const tombol = document.getElementById("tombolWarna")
+        const teks = document.getElementById("infoWarna")
+        let warna = 0;
 
+        tombol.addEventListener("click", () => {
+            warna = Math.floor(Math.random() * 16777215).toString(16);
+            document.body.style.background = "#" + warna;
+            teks.innerText = "Warna saat ini:" + "#" + warna
+        })        
     </script>
 </body>
 
