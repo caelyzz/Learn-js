@@ -24,12 +24,45 @@
 
     let soalKe = 0;
     let skor = 0;
-
-    // Tips: Buat fungsi tampilSoal() untuk memuat soal ke layar
-
-
-
     
+    let teksSoal = document.getElementById("tanyaKuis")
+    let jbBenar = document.getElementById("pilihanBenar")
+    let jbSalah = document.getElementById("pilihanSalah")
+    const skorTotal = document.getElementById("skorKuis")
+
+    tampilSoal()
+
+
+    function tampilSoal(){
+      teksSoal.innerText = soal[soalKe].pertanyaan
+      jbBenar.innerText = soal[soalKe].benar
+      jbSalah.innerText = soal[soalKe].salah
+      skorTotal.innerText = "Skor: " + skor
+    }
+
+    function lanjutSoal(){
+        if (soalKe < soal.length){
+          tampilSoal()
+        }
+        else{
+          jbBenar.disabled = true
+          jbSalah.disabled = true
+
+          teksSoal.innerText = ""
+          skorTotal.innerText = `Kuis selesai! Skormu: ${skor}/${soal.length}`
+        }
+    }
+
+    jbBenar.addEventListener("click", function(){
+      soalKe++
+      skor++
+      lanjutSoal()
+    })
+
+    jbSalah.addEventListener("click", function(){
+      soalKe++
+      lanjutSoal()
+    })
     
   </script>
 </body>
