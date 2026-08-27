@@ -26,13 +26,14 @@
     const tombolKecil = document.getElementById("tombolKecil")
 
     tombolBesar.addEventListener("click", function(){
-      ukuranFont++;
+      ukuranFont += 2;
       teksUk.style.fontSize = ukuranFont + "px";
       statusUk.innerText = "Ukuran saat ini: " + ukuranFont + "px";
     })
 
     tombolKecil.addEventListener("click", function(){
-      ukuranFont--;
+      if (ukuranFont === 10) {statusUk.innerText = "ukuran sudah minimum 10px"; return;}
+      ukuranFont -= 2;
       teksUk.style.fontSize = ukuranFont + "px";
       statusUk.innerText = "Ukuran saat ini: " + ukuranFont + "px";
     })
