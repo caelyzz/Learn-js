@@ -9,8 +9,14 @@
   <h2>Soal 02: Kuis dengan Skor</h2>
 
   <p id="tanyaKuis">Soal akan muncul di sini</p>
-  <button id="pilihanBenar">Jawaban A</button>
-  <button id="pilihanSalah">Jawaban B</button>
+  <!-- <teks id="jbA">a. </teks>
+  <teks id="jbB">b. </teks>
+  <teks id="jbC">c. </teks>
+  <teks id="jbD">d. </teks> -->
+  <button id="pgA">Jawaban A</button>
+  <button id="pgB">Jawaban B</button>
+  <button id="pgC">Jawaban C</button>
+  <button id="pgD">Jawaban D</button>
   <p id="skorKuis">Skor: 0</p>
 
   <script>
@@ -19,8 +25,23 @@
     const soal = [
       {
         pertanyaan: "dimana smk8?",
-        pilihan: ["pasar minggu", "pejaten", "jaksel", "jakarta"]
-        jawaban: ""
+        pilihan: {A:"pasar minggu", B:"pejaten", C:"jaksel", D:"jakarta"},
+        jawaban: "B"
+      },
+      {
+        pertanyaan: "dimana markas bin?",
+        pilihan: {A:"kalibata", B:"kemang", C:"sudirman", D:"blok m"},
+        jawaban: "A"
+      },
+      {
+        pertanyaan: "siapa yang paling jomok di rpl",
+        pilihan: {A:"gifari", B:"alif", C:"ataya", D:"adam"},
+        jawaban: "C"
+      },
+      {
+        pertanyaan: "siapa yang aku suka",
+        pilihan: {A:"kinan", B:"jejes", C:"mira", D:"jane"},
+        jawaban: "D"
       }
     ];
 
@@ -28,17 +49,20 @@
     let skor = 0;
     
     let teksSoal = document.getElementById("tanyaKuis")
-    let jbBenar = document.getElementById("pilihanBenar")
-    let jbSalah = document.getElementById("pilihanSalah")
+    let opsiA = document.getElementById("pgA")
+    let opsiB = document.getElementById("pgB")
+    let opsiC = document.getElementById("pgC")
+    let opsiD = document.getElementById("pgD")
     const skorTotal = document.getElementById("skorKuis")
 
     tampilSoal()
 
-
     function tampilSoal(){
       teksSoal.innerText = soal[soalKe].pertanyaan
-      jbBenar.innerText = soal[soalKe].benar
-      jbSalah.innerText = soal[soalKe].salah
+      opsiA.innerText = soal[soalKe].pilihan.A
+      opsiB.innerText = soal[soalKe].pilihan.B
+      opsiC.innerText = soal[soalKe].pilihan.C
+      opsiD.innerText = soal[soalKe].pilihan.D
       skorTotal.innerText = "Skor: " + skor
     }
 
@@ -47,21 +71,36 @@
           tampilSoal()
         }
         else{
-          jbBenar.disabled = true
-          jbSalah.disabled = true
+          opsiA.disabled = true
+          opsiB.disabled = true
+          opsiC.disabled = true
+          opsiD.disabled = true
 
           teksSoal.innerText = ""
           skorTotal.innerText = `Kuis selesai! Skormu: ${skor}/${soal.length}`
         }
     }
 
-    jbBenar.addEventListener("click", function(){
+    opsiA.addEventListener("click", function(){
+      if (soal[soalKe].jawaban === "A") skor++;
       soalKe++
-      skor++
       lanjutSoal()
     })
 
-    jbSalah.addEventListener("click", function(){
+    opsiB.addEventListener("click", function(){
+      if (soal[soalKe].jawaban === "B") skor++;
+      soalKe++
+      lanjutSoal()
+    })
+
+    opsiC.addEventListener("click", function(){
+      if (soal[soalKe].jawaban === "C") skor++;
+      soalKe++
+      lanjutSoal()
+    })
+
+    opsiD.addEventListener("click", function(){
+      if (soal[soalKe].jawaban === "D") skor++;
       soalKe++
       lanjutSoal()
     })
